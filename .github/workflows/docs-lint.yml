@@ -1,0 +1,28 @@
+name: Documentation Linting
+
+on:
+  push:
+    paths:
+      - "docs/**"
+      - "**.md"
+  pull_request:
+    paths:
+      - "docs/**"
+      - "**.md"
+
+jobs:
+  lint-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint Markdown
+        run: |
+          npm install -g markdownlint-cli
+          markdownlint --config .markdownlint.json 'docs/**/*.md' README.md
+
+      - name: Check Links
+        run: |
+          npm install -g markdown-link-check
+          markdown-link-check README.md
+          find docs -name "*.md" -exec markdown-link-check {} \;
