@@ -16,7 +16,7 @@ jobs:
       - run: |
           cd budget
           flutter pub get
-          flutter build web --release --web-renderer canvaskit --no-tree-shake-icons
+          flutter build web --release --no-tree-shake-icons
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
