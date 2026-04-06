@@ -15,20 +15,25 @@ Antes de começar, certifique-se de ter instalado:
 ## Configuração do Ambiente
 
 1. **Clonar o Repositório**
+
    ```bash
    git clone https://github.com/jameskokoska/Cashew.git
    cd Cashew
    ```
 
 2. **Instalar Dependências**
+
    Navegue até o diretório `budget` e instale os pacotes:
+
    ```bash
    cd budget
    flutter pub get
    ```
 
 3. **Gerar Código (Drift/EasyLocalization)**
+
    O Cashew utiliza geração de código para o banco de dados e localização:
+
    ```bash
    dart run build_runner build --delete-conflicting-outputs
    ```
