@@ -19,7 +19,7 @@ jobs:
       - name: Lint Markdown
         run: |
           npm install -g markdownlint-cli
-          markdownlint 'docs/**/*.md' README.md
+          markdownlint --config .markdownlint.json 'docs/**/*.md' README.md
 
       - name: Check Links
         run: |
